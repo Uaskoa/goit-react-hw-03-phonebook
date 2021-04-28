@@ -20,14 +20,6 @@ class App extends Component {
     const { name, number } = data;
     const normalizedName = name.toLowerCase();
 
-    // if (
-    //   this.state.contacts.filter(
-    //     contact => contact.name.toLowerCase() === normalizedName,
-    //   ).length > 0
-    // ) {
-    //   return alert(`${name} is already in contacts.`);
-    // }
-
     if (
       this.state.contacts.find(
         ({ name }) => name.toLowerCase() === normalizedName,
@@ -42,11 +34,6 @@ class App extends Component {
         { id: shortId.generate(), name, number },
       ],
     }));
-
-    // /   /через concat
-    // this.setState({
-    //   contacts: contacts.concat({ id: shortId.generate(), name, number }),
-    // });
   };
 
   getFilteredContacts = () => {
@@ -63,6 +50,20 @@ class App extends Component {
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
   };
+
+  componentDidMount() {
+    const contacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(contacts);
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
 
   render() {
     const filteredContacts = this.getFilteredContacts();
