@@ -1,0 +1,15 @@
+.form {
+  &-label {
+    &-title {
+      font-size: 14px;
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    display: block;
+  }
+
+  &-button {
+    margin-bottom: 30px;
+  }
+}

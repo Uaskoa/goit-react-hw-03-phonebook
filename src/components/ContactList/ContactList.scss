@@ -1,0 +1,23 @@
+.contact-list {
+  &-item {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &-name {
+    display: inline-block;
+    min-width: 150px;
+    margin-right: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+  }
+
+  &-number {
+    display: inline-block;
+    min-width: 80px;
+    margin-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+  }
+}

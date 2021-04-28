@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+li {
+  list-style: none;
+}
+
+.button {
+  min-width: 100px;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #303030;
+  background-color: #d1cdcd;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.input {
+  display: block;
+  margin-bottom: 10px;
+  height: 30px;
+}
